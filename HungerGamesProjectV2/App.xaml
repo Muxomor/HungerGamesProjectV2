@@ -4,6 +4,14 @@
              xmlns:local="clr-namespace:HungerGamesProjectV2"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="CornButton" TargetType="Button">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property ="CornerRadius" Value="7">
+                    </Setter>
+                </Style>
+            </Style.Resources>
+            <Setter Property="Foreground" Value="OrangeRed"></Setter>
+        </Style>
     </Application.Resources>
 </Application>
