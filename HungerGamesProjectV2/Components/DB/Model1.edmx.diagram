@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e9634ecd591349629a486e506138814e" Name="Diagram1">
+        <EntityTypeShape EntityType="HungerGamesModel.History_Votes" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HungerGamesModel.Hunger_Events" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HungerGamesModel.Items" Width="1.5" PointX="11.25" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="HungerGamesModel.Loc_Player" Width="1.5" PointX="10.5" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HungerGamesModel.Locations" Width="1.5" PointX="8.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HungerGamesModel.Player_Items_Inventory" Width="1.5" PointX="13.5" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HungerGamesModel.Players" Width="1.5" PointX="8.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HungerGamesModel.Roles" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HungerGamesModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HungerGamesModel.Users" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HungerGamesModel.Viewers" Width="1.5" PointX="5.25" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="HungerGamesModel.Vote_Users" Width="1.5" PointX="7.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HungerGamesModel.Votes" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <AssociationConnector Association="HungerGamesModel.FK_History_Votes_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="HungerGamesModel.FK_History_Votes_Votes" ManuallyRouted="false" />
+        <AssociationConnector Association="HungerGamesModel.FK__Players__id_even__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="HungerGamesModel.FK__Viewers__id_even__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="HungerGamesModel.FK_Loc_Player_Hunger_Events" ManuallyRouted="false" />
+        <AssociationConnector Association="HungerGamesModel.FK__Player_It__item___3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="HungerGamesModel.FK__Player_It__item___534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="HungerGamesModel.FK_Loc_Player_Locations" ManuallyRouted="false" />
+        <AssociationConnector Association="HungerGamesModel.FK_Loc_Player_Players" ManuallyRouted="false" />
+        <AssociationConnector Association="HungerGamesModel.FK__Player_It__playe__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="HungerGamesModel.FK__Players__id_user__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="HungerGamesModel.FK__Users__role__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="HungerGamesModel.FK__Viewers__id_user__4222D4EF" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
