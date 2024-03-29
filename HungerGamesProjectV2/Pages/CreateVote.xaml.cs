@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HungerGamesProjectV2.Components.DB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,13 @@ namespace HungerGamesProjectV2.Pages
     /// </summary>
     public partial class CreateVote : Page
     {
+        
         public CreateVote()
         {
             InitializeComponent();
+            //EventNameCB.ItemsSource = App.db.Hunger_Events.ToArray();
+           // Users[] players = App.db.Votes.Select(x => x.Players.Users.name).ToArray();
+            player1CB.ItemsSource = App.db.Players.ToArray().Select(x => x.Users.login);
         }
     }
 }
