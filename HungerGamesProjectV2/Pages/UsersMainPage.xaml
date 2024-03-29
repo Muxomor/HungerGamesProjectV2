@@ -17,6 +17,7 @@
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal">
+
                     <TextBlock Foreground="#FFB2B2B2">Login:</TextBlock>
                     <TextBlock Text="{Binding}"></TextBlock>
                 </StackPanel>

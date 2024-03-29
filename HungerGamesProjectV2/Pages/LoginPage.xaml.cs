@@ -42,7 +42,11 @@ namespace HungerGamesProject.Pages
                 {
                     if (App.db.Users.Any(x=>x.login == LoginTB.Text && x.role == 1))
                         {NavigationHelper.NavigateAfterLogin(true);}
-                    else { NavigationHelper.NavigateAfterLogin(false);}
+                    else { 
+                        NavigationHelper.NavigateAfterLogin(false);
+                        var user  = App.db.Users.First(x=>x.login==LoginTB.Text); 
+                        App.CurrentUser =user;
+                    }
                     
                 }
                 else
