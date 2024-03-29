@@ -9,6 +9,7 @@
       Title="VotesPage">
 
     <Grid>
-        
+        <TextBlock>Страница голосований</TextBlock>
+        <Button Name="CreateVotingBtn" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="CreateVotingBtn_Click">Создать голосование</Button>
     </Grid>
 </Page>

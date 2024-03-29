@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HungerGamesProject.Components;
+using HungerGamesProjectV2.Components;
 
 namespace HungerGamesProjectV2.Pages
 {
@@ -23,6 +25,11 @@ namespace HungerGamesProjectV2.Pages
         public VotesPage()
         {
             InitializeComponent();
+        }
+
+        private void CreateVotingBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationHelper.NavigateUsersPagesByRoute("Pages/CreateVote.xaml");
         }
     }
 }

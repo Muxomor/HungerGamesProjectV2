@@ -32,5 +32,10 @@ namespace HungerGamesProject.Pages
         {
             NavigationHelper.NavigationToLogin();
         }
+
+        private void VotingBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationHelper.NavigateUsersPagesByRoute("Pages/VotesPage.xaml");
+        }
     }
 }

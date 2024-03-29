@@ -35,7 +35,7 @@
                 <Button Margin="0 4 0 0" Visibility="Visible">Button</Button>
                 <Button Margin="0 4 0 0" Visibility="Visible">Button</Button>
                 <Button Margin="0 4 0 0" Visibility="Visible">Button</Button>
-                <Button Margin="0 4 0 0" Visibility="Visible">Button</Button>
+                <Button Name="VotingBtn" Margin="0 4 0 0" Visibility="Visible" Click="VotingBtn_Click">Голосования</Button>
 
             </StackPanel>
             <Button   Click="LogOutBtn_Click" Name="LogOutBtn" HorizontalAlignment="Left" VerticalAlignment="Bottom">LogOut</Button>
