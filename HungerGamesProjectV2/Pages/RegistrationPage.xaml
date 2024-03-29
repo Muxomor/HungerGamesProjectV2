@@ -1,40 +1,45 @@
-﻿<Page x:Class="HungerGamesProject.Pages.RegistrationPage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:HungerGamesProject.Pages"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+﻿<Page x:Class="HungerGamesProject.Pages.RegistrationPage" 
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"  
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
+      xmlns:local="clr-namespace:HungerGamesProject.Pages" 
+      mc:Ignorable="d"  
+      d:DesignHeight="450" d:DesignWidth="800" 
       Title="RegistrationPage">
 
-    <Grid>
-        
-        <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock FontSize="20">Для участия в игре зарегистрируйтесь в системе</TextBlock>
-            <StackPanel Width="200" Orientation="Vertical">
-                <StackPanel Margin="0 5" HorizontalAlignment="Right" Orientation="Horizontal">
-                    <TextBlock>Логин:</TextBlock>
-                    <TextBox Width="70" ToolTip="Придумайте себе уникальный логин для входа в систему." Name="LoginTB"></TextBox>
+    <Grid Background="#171717">
+
+        <StackPanel  HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="40 35 0 0">
+            <TextBlock FontSize="20" Foreground="#FFB2B2B2" FontFamily="Impact">Для участия в игре зарегистрируйтесь в системе</TextBlock>
+            <StackPanel Width="200" HorizontalAlignment="Left" Orientation="Vertical" Margin="0 40 0 0">
+                <StackPanel Margin="0 5" HorizontalAlignment="Left" Orientation="Vertical">
+                    <TextBlock Foreground="#FFB2B2B2">Логин:</TextBlock>
+                    <TextBox Width="170" ToolTip="Придумайте себе уникальный логин для входа в систему." Name="LoginTB"></TextBox>
                 </StackPanel>
-                <StackPanel Margin="0 5" HorizontalAlignment="Right" Orientation="Horizontal">
-                    <TextBlock>Пароль:</TextBlock>
-                    <PasswordBox Width="70" Name="PasswordPB"></PasswordBox>
+                <StackPanel Margin="0 5" HorizontalAlignment="Left" Orientation="Vertical">
+                    <TextBlock Foreground="#FFB2B2B2">Пароль:</TextBlock>
+                    <PasswordBox Width="170" Name="PasswordPB"></PasswordBox>
                 </StackPanel>
-                <StackPanel Margin="0 5" HorizontalAlignment="Right" Orientation="Horizontal">
-                    <TextBlock>Повторите пароль:</TextBlock>
-                    <PasswordBox Width="70" Name="ConfirmPassPB"></PasswordBox>
+                <StackPanel Margin="0 5" HorizontalAlignment="Left" Orientation="Vertical">
+                    <TextBlock Foreground="#FFB2B2B2">Повторите пароль:</TextBlock>
+                    <PasswordBox Width="170" Name="ConfirmPassPB"></PasswordBox>
                 </StackPanel>
-                <StackPanel Margin="0 5" HorizontalAlignment="Right" Orientation="Horizontal">
-                    <TextBlock>Выберите свою роль:</TextBlock>
-                    <ComboBox Width="70" ToolTip="Кем вы будете на время игр">
+                <StackPanel Margin="0 5" HorizontalAlignment="Left" Orientation="Vertical">
+                    <TextBlock Foreground="#FFB2B2B2">Выберите свою роль:</TextBlock>
+                    <ComboBox Width="170" x:Name="Rolecb" ToolTip="Кем вы будете на время игр">
                         <ComboBoxItem>Участник</ComboBoxItem>
                         <ComboBoxItem>Болельщик</ComboBoxItem>
                     </ComboBox>
                 </StackPanel>
-                <Button Margin="5" Click="Button_Click_1">Зарегистрироваться</Button>
-                <Button Margin="5" Click="Button_Click">Уже есть аккаунт</Button>
+                <StackPanel HorizontalAlignment="Left" Margin="0 15 0 0">
+                    <Button Margin="5" Width="120" Height="25" Click="Button_Click_1">Зарегистрироваться</Button>
+                    <Button Margin="5" Width="120" Height="25" Click="Button_Click">Уже есть аккаунт</Button>
+                </StackPanel>
             </StackPanel>
         </StackPanel>
     </Grid>
 </Page>
+
+
+

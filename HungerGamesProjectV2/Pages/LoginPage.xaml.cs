@@ -38,12 +38,28 @@ namespace HungerGamesProject.Pages
         {
             if (FIeldsHelper.CheckTwoFields(LoginTB.Text,PasswordTB.Password))
             {
-                //NavigationHelper.NavigateAfterLogin();
+                if(App.db.Users.Any(x=>x.login == LoginTB.Text && x.password == PasswordTB.Password))
+                {
+                    if (App.db.Users.Any(x=>x.login == LoginTB.Text && x.role == 1))
+                        {NavigationHelper.NavigateAfterLogin(true);}
+                    else { NavigationHelper.NavigateAfterLogin(false);}
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Такого пользователя не существует");
+                }
+
             }
             else
             {
                 MessageBox.Show("Заполните поля");
             }
+        }
+
+        private void LoginTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
