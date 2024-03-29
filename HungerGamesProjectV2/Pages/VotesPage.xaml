@@ -8,8 +8,8 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="VotesPage">
 
-    <Grid>
-        <TextBlock>Страница голосований</TextBlock>
-        <Button Name="CreateVotingBtn" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="CreateVotingBtn_Click">Создать голосование</Button>
+    <Grid Background="#171717">
+        <TextBlock Foreground="#FFB2B2B2" Margin="10 10 0 0" FontFamily="Impact" FontSize="20">Страница голосований</TextBlock>
+        <Button Height="25" Name="CreateVotingBtn" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="CreateVotingBtn_Click" Margin="0 0 10 10">Создать голосование</Button>
     </Grid>
 </Page>
