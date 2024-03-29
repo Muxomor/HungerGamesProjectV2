@@ -26,7 +26,6 @@ namespace HungerGamesProjectV2
             InitializeComponent();
             App.mainWindowFrame = MainWindowFrame;
             //MainWindowFrame.NavigationService.Navigate(new Uri("Pages/LoginPage.xaml", UriKind.Relative));
-            MainWindowFrame.Navigate(new Uri("Pages/CreateVote.xaml", UriKind.Relative));
         }
     }
 }
