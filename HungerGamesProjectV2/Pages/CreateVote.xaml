@@ -13,12 +13,12 @@
             <TextBlock>Event:</TextBlock>
             <ComboBox Name="EventNameCB" DisplayMemberPath="event_title"></ComboBox>
             <TextBlock>Vote Header:</TextBlock>
-            <TextBox></TextBox>
+            <TextBox Name="TitleTb"></TextBox>
             <TextBlock>Player1:</TextBlock>
             <ComboBox  Name="player1CB"></ComboBox>
             <TextBlock>Player2:</TextBlock>
             <ComboBox Name="player2CB"></ComboBox>
-            <Button Name="CreateVoteBtn">Create</Button>
+            <Button Name="CreateVoteBtn" Click="CreateVoteBtn_Click">Create</Button>
         </StackPanel>
     </Grid>
 </Page>
