@@ -45,5 +45,10 @@ namespace HungerGamesProject.Pages
                 MessageBox.Show("Заполните поля");
             }
         }
+
+        private void RegBtn_SourceUpdated(object sender, DataTransferEventArgs e)
+        {
+
+        }
     }
 }

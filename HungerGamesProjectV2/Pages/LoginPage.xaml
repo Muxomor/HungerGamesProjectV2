@@ -22,7 +22,7 @@
             </StackPanel>
             <StackPanel Margin="5">
                 <Button Margin="2" Height="20" Name="LogBtn" Click="LogBtn_Click">Войти</Button>
-                <Button Margin="2" Name="RegBtn" Click="RegBtn_Click">К регистрации</Button>
+                <Button  Margin="2" Name="RegBtn" Click="RegBtn_Click">К регистрации</Button>
             </StackPanel>
         </StackPanel>
     </Grid>

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using HungerGamesProjectV2.Components.DB;
 
 namespace HungerGamesProjectV2
 {
@@ -14,6 +15,7 @@ namespace HungerGamesProjectV2
     /// </summary>
     public partial class App : Application
     {
+        public static HungerGamesEntities db = new HungerGamesEntities();
         public static Frame mainWindowFrame;
         public static Frame UserPageFrame;
     }
