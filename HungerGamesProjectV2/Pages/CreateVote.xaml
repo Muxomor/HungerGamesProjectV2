@@ -9,16 +9,16 @@
       Title="CreateVote">
 
     <Grid Background="#171717">
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock>Event:</TextBlock>
-            <ComboBox Name="EventNameCB" DisplayMemberPath="event_title"></ComboBox>
-            <TextBlock>Vote Header:</TextBlock>
-            <TextBox Name="TitleTb"></TextBox>
-            <TextBlock>Player1:</TextBlock>
-            <ComboBox  Name="player1CB"></ComboBox>
-            <TextBlock>Player2:</TextBlock>
-            <ComboBox Name="player2CB"></ComboBox>
-            <Button Name="CreateVoteBtn" Click="CreateVoteBtn_Click">Create</Button>
+        <StackPanel HorizontalAlignment="Left" Margin="50 0 0 0" VerticalAlignment="Center">
+            <TextBlock Foreground="#FFB2B2B2">Event:</TextBlock>
+            <ComboBox Margin="0 0 0 15" Width="200" Name="EventNameCB" DisplayMemberPath="event_title" Height="25"></ComboBox>
+            <TextBlock Foreground="#FFB2B2B2">Vote Header:</TextBlock>
+            <TextBox Margin="0 0 0 15" Name="TitleTb" Height="25"></TextBox>
+            <TextBlock Foreground="#FFB2B2B2">Player1:</TextBlock>
+            <ComboBox Margin="0 0 0 15" Name="player1CB" Height="25"></ComboBox>
+            <TextBlock Foreground="#FFB2B2B2">Player2:</TextBlock>
+            <ComboBox Margin="0 0 0 5" Name="player2CB" Height="25"></ComboBox>
+            <Button Width="100" HorizontalAlignment="Left" Margin="0 12 0 0" Name="CreateVoteBtn" Click="CreateVoteBtn_Click">Create</Button>
         </StackPanel>
     </Grid>
 </Page>

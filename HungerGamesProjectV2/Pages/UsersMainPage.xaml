@@ -17,15 +17,15 @@
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock>Login:</TextBlock>
+                    <TextBlock Foreground="#FFB2B2B2">Login:</TextBlock>
                     <TextBlock Text="{Binding}"></TextBlock>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock>Name:</TextBlock>
+                    <TextBlock Foreground="#FFB2B2B2">Name:</TextBlock>
                     <TextBlock Text="{Binding}"></TextBlock>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock>Role:</TextBlock>
+                    <TextBlock Foreground="#FFB2B2B2">Role:</TextBlock>
                     <TextBlock Text="{Binding}"></TextBlock>
                 </StackPanel>
             </StackPanel>

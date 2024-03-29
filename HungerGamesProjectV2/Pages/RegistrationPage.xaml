@@ -9,25 +9,26 @@
       Title="RegistrationPage">
 
     <Grid Background="#171717">
+        <Image Source="/Assets/Mask group.png" Margin="340,154,-340,-154" />
 
         <StackPanel  HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="40 35 0 0">
             <TextBlock FontSize="20" Foreground="#FFB2B2B2" FontFamily="Impact">Для участия в игре зарегистрируйтесь в системе</TextBlock>
             <StackPanel Width="200" HorizontalAlignment="Left" Orientation="Vertical" Margin="0 40 0 0">
                 <StackPanel Margin="0 5" HorizontalAlignment="Left" Orientation="Vertical">
                     <TextBlock Foreground="#FFB2B2B2">Логин:</TextBlock>
-                    <TextBox Width="170" ToolTip="Придумайте себе уникальный логин для входа в систему." Name="LoginTB"></TextBox>
+                    <TextBox Width="170" ToolTip="Придумайте себе уникальный логин для входа в систему." Name="LoginTB" Height="25"></TextBox>
                 </StackPanel>
                 <StackPanel Margin="0 5" HorizontalAlignment="Left" Orientation="Vertical">
                     <TextBlock Foreground="#FFB2B2B2">Пароль:</TextBlock>
-                    <PasswordBox Width="170" Name="PasswordPB"></PasswordBox>
+                    <PasswordBox Width="170" Name="PasswordPB" Height="25"></PasswordBox>
                 </StackPanel>
                 <StackPanel Margin="0 5" HorizontalAlignment="Left" Orientation="Vertical">
                     <TextBlock Foreground="#FFB2B2B2">Повторите пароль:</TextBlock>
-                    <PasswordBox Width="170" Name="ConfirmPassPB"></PasswordBox>
+                    <PasswordBox Width="170" Name="ConfirmPassPB" Height="25"></PasswordBox>
                 </StackPanel>
                 <StackPanel Margin="0 5" HorizontalAlignment="Left" Orientation="Vertical">
                     <TextBlock Foreground="#FFB2B2B2">Выберите свою роль:</TextBlock>
-                    <ComboBox Width="170" x:Name="Rolecb" ToolTip="Кем вы будете на время игр">
+                    <ComboBox Width="170" Height="25" x:Name="Rolecb" ToolTip="Кем вы будете на время игр">
                         <ComboBoxItem>Участник</ComboBoxItem>
                         <ComboBoxItem>Болельщик</ComboBoxItem>
                     </ComboBox>
