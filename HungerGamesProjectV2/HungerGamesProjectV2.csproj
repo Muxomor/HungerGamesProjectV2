@@ -220,6 +220,7 @@
   <ItemGroup />
   <ItemGroup>
     <Resource Include="Assets\IMG_6095.JPG" />
+    <Resource Include="Assets\Mask group.png" />
     <Content Include="Components\DB\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>

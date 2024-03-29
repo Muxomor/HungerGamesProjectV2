@@ -9,9 +9,32 @@
       Title="LoginPage">
 
     <Grid Background="#171717">
-        <Image Source="/Assets/IMG_6095.JPG"  HorizontalAlignment="Right"/>
-
-        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Margin="20  0 0 320 " FontFamily="Impact">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="181*"/>
+            <ColumnDefinition Width="219*"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="/Assets/IMG_6095.JPG"  HorizontalAlignment="Left" Grid.Column="1" Margin="63,0,0,0"/>
+        <Image Source="/Assets/Mask group.png" Margin="-327,225,307,-191" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" >
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-113.889"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image Source="/Assets/Mask group.png" Margin="80,-182,210,286" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" >
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-51.81"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Margin="20,53,0,0" FontFamily="Impact" Grid.ColumnSpan="2">
             <TextBlock.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#4A0001"/>
@@ -23,10 +46,10 @@
 
             <StackPanel Margin="3" Orientation="Vertical">
                 <TextBlock Foreground="#FFB2B2B2">Login:</TextBlock>
-                <TextBox  Width="200" x:Name="LoginTB"/>
+                <TextBox  Height="25" Width="200" x:Name="LoginTB"/>
 
                 <TextBlock Foreground="#FFB2B2B2">Password:</TextBlock>
-                <PasswordBox Width="200 
+                <PasswordBox Height="25" Width="200 
                              " Name="PasswordTB"></PasswordBox>
             </StackPanel>
         </StackPanel>
