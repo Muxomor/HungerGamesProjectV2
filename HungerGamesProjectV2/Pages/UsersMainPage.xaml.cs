@@ -1,5 +1,6 @@
 ﻿using HungerGamesProject.Components;
 using HungerGamesProjectV2;
+using HungerGamesProjectV2.Components.DB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,11 @@ namespace HungerGamesProject.Pages
         {
             InitializeComponent();
             App.UserPageFrame = this.GameInfoFrame;
+            
+            //var user = (from p in App.db.Users where p.id == App.CurrentUser select p) as Users;
+            loginTB.Text = App.CurrentUser.login;
+            NameTB.Text = App.CurrentUser.name;
+            RoleTB.Text = App.CurrentUser.Roles.role_name;
         }
 
         private void LogOutBtn_Click(object sender, RoutedEventArgs e)

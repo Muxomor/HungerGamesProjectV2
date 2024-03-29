@@ -18,5 +18,6 @@ namespace HungerGamesProjectV2
         public static HungerGamesEntities db = new HungerGamesEntities();
         public static Frame mainWindowFrame;
         public static Frame UserPageFrame;
+        public static Users CurrentUser;
     }
 }
