@@ -14,32 +14,32 @@
             <ColumnDefinition Width="39*"/>
         </Grid.ColumnDefinitions>
         <Frame Grid.Column="1" Name="GameInfoFrame"></Frame>
-        <StackPanel Orientation="Vertical">
+        <StackPanel  Margin="10 40 0 0" Orientation="Vertical">
             <StackPanel Orientation="Vertical">
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="0 10 0 0" Orientation="Horizontal">
 
                     <TextBlock Foreground="#FFB2B2B2">Login:</TextBlock>
-                    <TextBlock Text="{Binding}"></TextBlock>
+                    <TextBlock x:Name="loginTB"></TextBlock>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="0 10 0 0" Orientation="Horizontal">
                     <TextBlock Foreground="#FFB2B2B2">Name:</TextBlock>
-                    <TextBlock Text="{Binding}"></TextBlock>
+                    <TextBlock x:Name="NameTB"></TextBlock>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="0 10 0 0" Orientation="Horizontal">
                     <TextBlock Foreground="#FFB2B2B2">Role:</TextBlock>
-                    <TextBlock Text="{Binding}"></TextBlock>
+                    <TextBlock  x:Name="RoleTB"></TextBlock>
                 </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Vertical">
-                <Button Margin="0 4 0 0" Visibility="Visible">Button</Button>
+            <StackPanel Margin="0 20 0 0" HorizontalAlignment="Left" Orientation="Vertical">
+                <!--<Button Margin="0 4 0 0" Visibility="Visible">Button</Button>
                 <Button Margin="0 4 0 0" Visibility="Visible" Click="Button_Click">Button</Button>
                 <Button Margin="0 4 0 0" Visibility="Visible">Button</Button>
                 <Button Margin="0 4 0 0" Visibility="Visible">Button</Button>
-                <Button Margin="0 4 0 0" Visibility="Visible">Button</Button>
-                <Button Name="VotingBtn" Margin="0 4 0 0" Visibility="Visible" Click="VotingBtn_Click">Голосования</Button>
+                <Button Margin="0 4 0 0" Visibility="Visible">Button</Button>-->
+                <Button Name="VotingBtn" Margin="0 5 0 0" Visibility="Visible" Click="VotingBtn_Click" Width="100" Height="25">Голосования</Button>
 
             </StackPanel>
-            <Button   Click="LogOutBtn_Click" Name="LogOutBtn" HorizontalAlignment="Left" VerticalAlignment="Bottom">LogOut</Button>
+            <Button Margin="0 10 0 0"  Click="LogOutBtn_Click" Name="LogOutBtn" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="100" Height="25">LogOut</Button>
         </StackPanel>
     </Grid>
 </Page>

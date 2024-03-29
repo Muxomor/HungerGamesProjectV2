@@ -18,7 +18,7 @@
             <ComboBox Margin="0 0 0 15" Name="player1CB" Height="25"></ComboBox>
             <TextBlock Foreground="#FFB2B2B2">Player2:</TextBlock>
             <ComboBox Margin="0 0 0 5" Name="player2CB" Height="25"></ComboBox>
-            <Button Width="100" HorizontalAlignment="Left" Margin="0 12 0 0" Name="CreateVoteBtn" Click="CreateVoteBtn_Click">Create</Button>
+            <Button Width="100" Height="25" HorizontalAlignment="Left" Margin="0 12 0 0" Name="CreateVoteBtn" Click="CreateVoteBtn_Click">Create</Button>
         </StackPanel>
     </Grid>
 </Page>
