@@ -24,8 +24,14 @@ namespace HungerGamesProjectV2.Components.DB
         public string vote_title { get; set; }
         public Nullable<int> vote_users_id { get; set; }
         public Nullable<int> vote_winner { get; set; }
+        public Nullable<int> player1_id { get; set; }
+        public Nullable<int> player1_votes_qnt { get; set; }
+        public Nullable<int> player2_id { get; set; }
+        public Nullable<int> player2_votes_qnt { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<History_Votes> History_Votes { get; set; }
+        public virtual Players Players { get; set; }
+        public virtual Players Players1 { get; set; }
     }
 }

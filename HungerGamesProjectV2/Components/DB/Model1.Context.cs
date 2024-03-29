@@ -36,7 +36,6 @@ namespace HungerGamesProjectV2.Components.DB
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<Viewers> Viewers { get; set; }
-        public virtual DbSet<Vote_Users> Vote_Users { get; set; }
         public virtual DbSet<Votes> Votes { get; set; }
     }
 }

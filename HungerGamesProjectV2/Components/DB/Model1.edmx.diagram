@@ -16,7 +16,6 @@
         <EntityTypeShape EntityType="HungerGamesModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HungerGamesModel.Users" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="HungerGamesModel.Viewers" Width="1.5" PointX="5.25" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="HungerGamesModel.Vote_Users" Width="1.5" PointX="7.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HungerGamesModel.Votes" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
         <AssociationConnector Association="HungerGamesModel.FK_History_Votes_Users" ManuallyRouted="false" />
         <AssociationConnector Association="HungerGamesModel.FK_History_Votes_Votes" ManuallyRouted="false" />
@@ -31,6 +30,8 @@
         <AssociationConnector Association="HungerGamesModel.FK__Players__id_user__3E52440B" ManuallyRouted="false" />
         <AssociationConnector Association="HungerGamesModel.FK__Users__role__398D8EEE" ManuallyRouted="false" />
         <AssociationConnector Association="HungerGamesModel.FK__Viewers__id_user__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="HungerGamesModel.FK_Votes_Players" />
+        <AssociationConnector Association="HungerGamesModel.FK_Votes_Players1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

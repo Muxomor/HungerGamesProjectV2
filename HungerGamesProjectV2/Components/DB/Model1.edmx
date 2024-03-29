@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище HungerGamesModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище HungerGamesModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="History_Votes">
           <Key>
             <PropertyRef Name="id_HistoryVotes" />
@@ -105,14 +105,6 @@
           <Property Name="id_user" Type="int" />
           <Property Name="id_event" Type="int" />
         </EntityType>
-        <EntityType Name="Vote_Users">
-          <Key>
-            <PropertyRef Name="vote_users_id" />
-          </Key>
-          <Property Name="vote_users_id" Type="int" Nullable="false" />
-          <Property Name="player" Type="int" />
-          <Property Name="player_votes_qnt" Type="int" />
-        </EntityType>
         <EntityType Name="Votes">
           <Key>
             <PropertyRef Name="vote_id" />
@@ -121,6 +113,10 @@
           <Property Name="vote_title" Type="nvarchar" MaxLength="255" />
           <Property Name="vote_users_id" Type="int" />
           <Property Name="vote_winner" Type="int" />
+          <Property Name="player1_id" Type="int" />
+          <Property Name="player1_votes_qnt" Type="int" />
+          <Property Name="player2_id" Type="int" />
+          <Property Name="player2_votes_qnt" Type="int" />
         </EntityType>
         <Association Name="FK__Player_It__item___3E52440B">
           <End Role="Items" Type="Self.Items" Multiplicity="0..1" />
@@ -278,6 +274,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Votes_Players">
+          <End Role="Players" Type="Self.Players" Multiplicity="0..1" />
+          <End Role="Votes" Type="Self.Votes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Players">
+              <PropertyRef Name="player_id" />
+            </Principal>
+            <Dependent Role="Votes">
+              <PropertyRef Name="player1_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Votes_Players1">
+          <End Role="Players" Type="Self.Players" Multiplicity="0..1" />
+          <End Role="Votes" Type="Self.Votes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Players">
+              <PropertyRef Name="player_id" />
+            </Principal>
+            <Dependent Role="Votes">
+              <PropertyRef Name="player2_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="Хранилище HungerGamesModelContainer">
           <EntitySet Name="History_Votes" EntityType="Self.History_Votes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Hunger_Events" EntityType="Self.Hunger_Events" Schema="dbo" store:Type="Tables" />
@@ -290,7 +310,6 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Viewers" EntityType="Self.Viewers" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Vote_Users" EntityType="Self.Vote_Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Votes" EntityType="Self.Votes" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Player_It__item___3E52440B" Association="Self.FK__Player_It__item___3E52440B">
             <End Role="Items" EntitySet="Items" />
@@ -344,9 +363,16 @@
             <End Role="Players" EntitySet="Players" />
             <End Role="Loc_Player" EntitySet="Loc_Player" />
           </AssociationSet>
+          <AssociationSet Name="FK_Votes_Players" Association="Self.FK_Votes_Players">
+            <End Role="Players" EntitySet="Players" />
+            <End Role="Votes" EntitySet="Votes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Votes_Players1" Association="Self.FK_Votes_Players1">
+            <End Role="Players" EntitySet="Players" />
+            <End Role="Votes" EntitySet="Votes" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HungerGamesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -430,6 +456,8 @@
           <NavigationProperty Name="Loc_Player" Relationship="Self.FK_Loc_Player_Players" FromRole="Players" ToRole="Loc_Player" />
           <NavigationProperty Name="Player_Items_Inventory" Relationship="Self.FK__Player_It__playe__47DBAE45" FromRole="Players" ToRole="Player_Items_Inventory" />
           <NavigationProperty Name="Users" Relationship="Self.FK__Players__id_user__3E52440B" FromRole="Players" ToRole="Users" />
+          <NavigationProperty Name="Votes" Relationship="HungerGamesModel.FK_Votes_Players" FromRole="Players" ToRole="Votes" />
+          <NavigationProperty Name="Votes1" Relationship="HungerGamesModel.FK_Votes_Players1" FromRole="Players" ToRole="Votes" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -475,14 +503,6 @@
           <NavigationProperty Name="Hunger_Events" Relationship="Self.FK__Viewers__id_even__4316F928" FromRole="Viewers" ToRole="Hunger_Events" />
           <NavigationProperty Name="Users" Relationship="Self.FK__Viewers__id_user__4222D4EF" FromRole="Viewers" ToRole="Users" />
         </EntityType>
-        <EntityType Name="Vote_Users">
-          <Key>
-            <PropertyRef Name="vote_users_id" />
-          </Key>
-          <Property Name="vote_users_id" Type="Int32" Nullable="false" />
-          <Property Name="player" Type="Int32" />
-          <Property Name="player_votes_qnt" Type="Int32" />
-        </EntityType>
         <EntityType Name="Votes">
           <Key>
             <PropertyRef Name="vote_id" />
@@ -492,6 +512,12 @@
           <Property Name="vote_users_id" Type="Int32" />
           <Property Name="vote_winner" Type="Int32" />
           <NavigationProperty Name="History_Votes" Relationship="Self.FK_History_Votes_Votes" FromRole="Votes" ToRole="History_Votes" />
+          <Property Name="player1_id" Type="Int32" />
+          <Property Name="player1_votes_qnt" Type="Int32" />
+          <Property Name="player2_id" Type="Int32" />
+          <Property Name="player2_votes_qnt" Type="Int32" />
+          <NavigationProperty Name="Players" Relationship="HungerGamesModel.FK_Votes_Players" FromRole="Votes" ToRole="Players" />
+          <NavigationProperty Name="Players1" Relationship="HungerGamesModel.FK_Votes_Players1" FromRole="Votes" ToRole="Players" />
         </EntityType>
         <Association Name="FK_History_Votes_Users">
           <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
@@ -661,7 +687,6 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Users" EntityType="Self.Users" />
           <EntitySet Name="Viewers" EntityType="Self.Viewers" />
-          <EntitySet Name="Vote_Users" EntityType="Self.Vote_Users" />
           <EntitySet Name="Votes" EntityType="Self.Votes" />
           <AssociationSet Name="FK_History_Votes_Users" Association="Self.FK_History_Votes_Users">
             <End Role="Users" EntitySet="Users" />
@@ -715,7 +740,39 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="Viewers" EntitySet="Viewers" />
           </AssociationSet>
+          <AssociationSet Name="FK_Votes_Players" Association="HungerGamesModel.FK_Votes_Players">
+            <End Role="Players" EntitySet="Players" />
+            <End Role="Votes" EntitySet="Votes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Votes_Players1" Association="HungerGamesModel.FK_Votes_Players1">
+            <End Role="Players" EntitySet="Players" />
+            <End Role="Votes" EntitySet="Votes" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_Votes_Players">
+          <End Type="HungerGamesModel.Players" Role="Players" Multiplicity="0..1" />
+          <End Type="HungerGamesModel.Votes" Role="Votes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Players">
+              <PropertyRef Name="player_id" />
+            </Principal>
+            <Dependent Role="Votes">
+              <PropertyRef Name="player1_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Votes_Players1">
+          <End Type="HungerGamesModel.Players" Role="Players" Multiplicity="0..1" />
+          <End Type="HungerGamesModel.Votes" Role="Votes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Players">
+              <PropertyRef Name="player_id" />
+            </Principal>
+            <Dependent Role="Votes">
+              <PropertyRef Name="player2_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -833,18 +890,13 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Vote_Users">
-            <EntityTypeMapping TypeName="HungerGamesModel.Vote_Users">
-              <MappingFragment StoreEntitySet="Vote_Users">
-                <ScalarProperty Name="vote_users_id" ColumnName="vote_users_id" />
-                <ScalarProperty Name="player" ColumnName="player" />
-                <ScalarProperty Name="player_votes_qnt" ColumnName="player_votes_qnt" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Votes">
             <EntityTypeMapping TypeName="HungerGamesModel.Votes">
               <MappingFragment StoreEntitySet="Votes">
+                <ScalarProperty Name="player2_votes_qnt" ColumnName="player2_votes_qnt" />
+                <ScalarProperty Name="player2_id" ColumnName="player2_id" />
+                <ScalarProperty Name="player1_votes_qnt" ColumnName="player1_votes_qnt" />
+                <ScalarProperty Name="player1_id" ColumnName="player1_id" />
                 <ScalarProperty Name="vote_id" ColumnName="vote_id" />
                 <ScalarProperty Name="vote_title" ColumnName="vote_title" />
                 <ScalarProperty Name="vote_users_id" ColumnName="vote_users_id" />

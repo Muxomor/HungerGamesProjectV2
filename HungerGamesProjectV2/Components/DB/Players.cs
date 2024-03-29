@@ -19,6 +19,8 @@ namespace HungerGamesProjectV2.Components.DB
         {
             this.Loc_Player = new HashSet<Loc_Player>();
             this.Player_Items_Inventory = new HashSet<Player_Items_Inventory>();
+            this.Votes = new HashSet<Votes>();
+            this.Votes1 = new HashSet<Votes>();
         }
     
         public int player_id { get; set; }
@@ -34,5 +36,9 @@ namespace HungerGamesProjectV2.Components.DB
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Player_Items_Inventory> Player_Items_Inventory { get; set; }
         public virtual Users Users { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Votes> Votes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Votes> Votes1 { get; set; }
     }
 }
