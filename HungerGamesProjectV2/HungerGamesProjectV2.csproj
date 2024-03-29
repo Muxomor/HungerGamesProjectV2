@@ -127,9 +127,6 @@
     <Compile Include="Components\DB\Votes.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Components\DB\Vote_Users.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Components\FIeldsHelper.cs" />
     <Compile Include="Components\NavigationHelper.cs" />
     <Compile Include="Components\VotesUserControll.xaml.cs">
