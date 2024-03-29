@@ -13,5 +13,10 @@
             </Style.Resources>
             <Setter Property="Foreground" Value="OrangeRed"></Setter>
         </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#19DDDDDD"></Setter>
+            <Setter Property="Foreground" Value="#FFB2B2B2"></Setter>
+            <Setter Property="BorderBrush" Value="#FF650405"></Setter>
+        </Style>
     </Application.Resources>
 </Application>
